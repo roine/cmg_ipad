@@ -21,7 +21,7 @@ $('.hasModal').click(function(){
         $("#overlay").remove();
     }
     var type = $(this).data('modal');
-    $.getJSON('/js/data.json', function(data) {
+    $.getJSON('data.json', function(data) {
 
     })
     .error(function(e){
