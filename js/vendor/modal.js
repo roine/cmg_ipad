@@ -56,7 +56,7 @@ var Avgrund = (function(){
     $popup = $(selector);
     $popup.addClass('avgrund-popup-animate');
     activate();
-    console.log($popup.scrollTop())
+
     return this;
   }
   function hide() {

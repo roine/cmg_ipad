@@ -98,13 +98,13 @@ body {
     color: #222;
 }
  
-.avgrund-active body {
+/* .avgrund-active body {
   -webkit-transform: scale( 0.9 );
      -moz-transform: scale( 0.9 );
       -ms-transform: scale( 0.9 );
        -o-transform: scale( 0.9 );
           transform: scale( 0.9 );
-}
+} */
 
 .avgrund-cover {
   position: absolute;
@@ -137,28 +137,28 @@ body {
             filter: none;
   }
 
+ 
 .avgrund-popup {
   position: absolute;
-  width: 340px;
-  height: 180px;
-  left: 50%;
-  top: 50%;
-  margin: -130px 0 0 -190px;
+  width: 80%;
+  height: 70%;
+
   visibility: hidden;
   opacity: 0;
   z-index: 2;
 
+  border-radius:4px;
+  margin:0 auto;
 
-  background: white;
-  box-shadow: 0px 0px 20px rgba( 0, 0, 0, 0.6 );
-  border-radius: 3px;
+  background: #fffaf6;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 1px 5px rgba(0,0,0,0.2), 0 0 0 12px rgba(255,255,255,0.4);
 
   -webkit-transform: scale( 0.8 );
      -moz-transform: scale( 0.8 );
       -ms-transform: scale( 0.8 );
        -o-transform: scale( 0.8 );
           transform: scale( 0.8 );
-}
+} 
   .avgrund-active .avgrund-popup-animate {
     visibility: visible;
     opacity: 1;
@@ -211,7 +211,10 @@ body {
 
 .modal-header{
   padding: 9px 15px;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 3px solid #aaa;
+  border-top: 3px solid #aaa;
+  margin: 20px 30px 0 30px;
+  box-shadow: 0 13px 8px -9px rgba(0,0,0,0.2);
 }
 
 .modal-header .close {
@@ -242,15 +245,18 @@ body {
 }
 
 
-.modal-header h3 {
+.modal-header h1 {
   margin: 0;
   line-height: 30px;
+  color:#2889db;
 }
 
 .modal-body {
-  max-height: 400px;
-  padding: 15px;
+  height: 80%;
+  padding: 15px 35px 0 35px;
   overflow-y: auto;
+  text-align:justify;
+  font-size:13px;
 }
 
 .modal-form {

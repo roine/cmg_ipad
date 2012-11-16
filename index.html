@@ -48,21 +48,22 @@
 
     </head>
     <body>
-<aside id="default-popup" class="avgrund-popup">
+        
+       
+       <div class='height-wrapper avgrund-contents'>
+        <aside id="default-popup" class="avgrund-popup">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h3>Modal Heading</h3>
+              <h1></h1>
             </div>
             <div class='modal-body'>
                 <p>
-                    content 
+                    
                 </p>
                 <button class='close'>Close</button>
             </div>
             
         </aside>
- 
-       <div class='height-wrapper avgrund-contents'>
  <div class='size'></div>
         <!-- start header -->
            <header class='container'>
@@ -72,14 +73,16 @@
                     </div>
                     <nav class='col_2'>
                         <ul class="button-group center">
-                            <li><button class="button color black hasModal" >About Us</button></li>
-                            <li><button class="button color black hasModal" >Account</button></li>
-                            <li><button class="button color black hasModal" >Partners</button></li>
-                            <li><button class="button color black hasModal" >Funds</button></li>
+                            <li><button class="button color black hasModal" data-modal='aboutUs'>About Us</button></li>
+                            <li><button class="button color black hasModal" data-modal='account'>Account</button></li>
+                            <li><button class="button color black hasModal" data-modal='partners'>Partners</button></li>
+                            <li><button class="button color black hasModal" data-modal='funds'>Funds</button></li>
                         </ul>
                     </nav>
                     <div class='col_3 search-container' role='search'>
-                        <input type='search' placeholder='search' class='mac float-right noise' />
+                        <form class='search'>
+                            <input type='search' placeholder='search' class='mac float-right noise' />
+                        </form>
                         <i class="icon-search"></i>
                     </div>
                 </div>
@@ -251,6 +254,7 @@
                <li>demo account</li>
            </ul>
        </footer>
+
        <div class='avgrund-cover'></div>
       
        <!-- JavaScript at the bottom for fast page loading -->
@@ -269,7 +273,7 @@
 
         <script type ='text/javascript' src ='js/vendor/jquery.iosslider.min.js'></script>
 
-        
+         <script type ='text/javascript' src ='js/vendor/highlight.js'></script>
 
         <!-- some js tools such as modal, tooltip... -->
         <script src="js/vendor/modal.js"></script>
@@ -283,10 +287,10 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-            g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-            s.parentNode.insertBefore(g,s)}(document,"script"));
+            // var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+            // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            // g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+            // s.parentNode.insertBefore(g,s)}(document,"script"));
         </script>
     </body>
 </html>

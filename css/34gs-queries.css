@@ -183,7 +183,8 @@
 
 	/* user styles goes here */
 	.hide-ipad-landscape{display:block;}
-
+	.logo{display:none;}
+	header .button-group .button{padding:7px 6px!important;}
 }
 
 /* 
