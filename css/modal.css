@@ -158,6 +158,7 @@ body {
       -ms-transform: scale( 0.8 );
        -o-transform: scale( 0.8 );
           transform: scale( 0.8 );
+  z-index:100;
 } 
   .avgrund-active .avgrund-popup-animate {
     visibility: visible;
