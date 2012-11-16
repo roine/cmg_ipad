@@ -1,9 +1,11 @@
 /*!
- * avgrund 0.1
+ * avgrund 0.1.1
  * http://lab.hakim.se/avgrund
  * MIT licensed
  *
  * Copyright (C) 2012 Hakim El Hattab, http://hakim.se
+ *
+ * modified by Jonathan de Montalembert
  */
 var Avgrund = (function(){
 

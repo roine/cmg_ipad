@@ -258,10 +258,10 @@ body{display:none;}
     text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
     color:white;
     /* for overlay style */
-    /* position:relative;
+     position:relative;
     top:0;
     left:0;
-    z-index:100; */
+    z-index:100; 
 
     border-radius:3px;
 
