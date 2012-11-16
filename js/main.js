@@ -20,7 +20,7 @@ $('.hasModal').on('touchstart', function(event){openPopup($(this))});
 var openPopup = function(that){
 
     var type = $(that).data('modal');
-    $.getJSON('/js/data.json', function(data) {
+    $.getJSON('js/data.json', function(data) {
 
     })
     .error(function(e){
