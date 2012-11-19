@@ -44,10 +44,11 @@
         <link rel="stylesheet" href="css/34gs-queries.css">
         <!-- modernizr -->
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+
         
 
     </head>
-    <body>
+    <body class='invisible'>
         <aside id="default-popup" class="avgrund-popup">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -81,7 +82,7 @@
                             <li><button class="button color black hasModal" data-modal='funds'>Funds</button></li>
                         </ul>
                     </nav>
-                    <div class='col_3 search-container' role='search'>
+                    <div class='col_5 search-container float-right' role='search'>
                         <form class='search'>
                             <input type='search' placeholder='search' class='mac float-right noise' />
                         </form>
@@ -90,19 +91,42 @@
                 </div>
            </header>
 
-            <div class='slideshow hide-ipad-landscape' role='slideshow'>
-               <div class='iosSlider' >
-                   <div class='slider'>
-                        <div class='slide'>
-                            <img src='http://fakeimg.pl/1024x300?text=Slide1'>
-                        </div>
-                        <div class='slide'>
-                            <img src='http://fakeimg.pl/1024x300?text=Slide2'>
-                        </div>
-                    </div>
-               </div>
-           </div>
-           <!-- end slideshow -->
+<!-- slider container -->
+<div class='sliderContainer'>
+    <div class = 'iosSlider banner'>
+
+        <!-- slider -->
+        <div class = 'slider'>
+        
+            <!-- slides -->
+            <div class = 'slide item1'>
+                <div class='inner'>
+                    <img src='img/top/cmg-banner1.jpg'>
+                </div>
+            </div>
+            
+            <div class = 'slide item2'>
+                <div class='inner'>
+                    <img src='img/top/cmg-banner2.jpg'>
+                </div>
+            </div>
+            
+            <div class = 'slide item3'>
+                <div class='inner'>
+                    <img src='img/top/cmg-banner3.jpg'>
+                </div>
+            </div>
+            
+            <div class = 'slide item4'>
+                <div class='inner'>
+                    <img src='img/top/cmg-banner4.jpg'>
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
 
            <div class='row topButtons' role='two top buttons'>
                 <div class='col_2'>
@@ -117,45 +141,107 @@
            <!-- Start main content -->
            <div class='container content' role='main content'>
 
-                <div class='row'>
 
-                        <div class='col_3 hasModal'>
-                            <div class='box'>
-                                <div class='picture'>
-                                    <img src='img/fund-my-account-btn.png'>
-                                    <div class='hover_shine'></div>
-                                </div>
+               
+               <div class='sliderContainer'>
+                <div class = 'iosSlider row1'>
+
+                    <!-- slider -->
+                    <div class = 'slider'>
+                    
+                        slides
+                        <div class = 'slide item1'>
+                            <div class='inner'>
+                                <img src='img/row1/cmg-cmg-advantages.png'>
                                 <div class='description'>
-                                    Fund My Account
-                                </div>
+                                   cmg advantages
+                               </div>
                             </div>
                         </div>
-
-                        <div class='col_3 hasModal'>
-                            <div class='box'>
-                                <div class='picture gloomy' >
-                                    <img src='img/open-live-account-btn.png'>
-                                    <div class='hover_shine'></div>
-                                </div>
+                        
+                        <div class = 'slide item2'>
+                            <div class='inner'>
+                              <img src='img/row1/cmg-CMG-FAQ-.png'>
+                              <div class='description'>
+                                   cmg FAQ
+                               </div>
+                            </div>
+                             
+                        </div>
+                        
+                        <div class = 'slide item3'>
+                            <div class='inner'>
+                               <img src='img/row1/cmg-Contact-US-.png'>
+                               <div class='description'>
+                                   contact us
+                               </div>
+                            </div>
+                             
+                        </div>
+                    
+                         <div class = 'slide item4'>
+                            <div class='inner'>
+                                <img src='img/row1/cmg-Forex-Basics-.png'>
                                 <div class='description'>
-                                Open Live account
-                                </div>
+                                   Forex basics
+                               </div>
                             </div>
                         </div>
-
-                        <div class='col_3 hasModal'>
-                            <div class='box'>
-                                <div class='picture gloomy'>
-                                    <img src='img/open-demo-account.png'>
-                                    <div class='hover_shine'></div>
-                                </div>
-                                <div class='description'>
-                                open demo account
-                                </div>
+                        
+                        <div class = 'slide item5'>
+                            <div class='inner'>
+                              <img src='img/row1/cmg-fund-in-rmb.png'>
+                               <div class='description'>
+                                   Fund in RMB
+                               </div>
                             </div>
+                            
                         </div>
-
+                        
+                        <div class = 'slide item6'>
+                            <div class='inner'>
+                               <img src='img/row1/cmg-FX-Glossary.png'>
+                                <div class='description'>
+                                  FX glossary
+                               </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class = 'slide item7'>
+                            <div class='inner'>
+                               <img src='img/row1/cmg-Mobile-Tarding.png'>
+                                <div class='description'>
+                                   Mobile trading
+                               </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class = 'slide item8'>
+                            <div class='inner'>
+                               <img src='img/row1/cmg-Tight-Spreads-.png'>
+                                <div class='description'>
+                                   Tight Spreads
+                               </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class = 'slide item9'>
+                            <div class='inner'>
+                               <img src='img/row1/cmg-Forex-Study.png'>
+                               <div class='description'>
+                                   Forex study
+                               </div>
+                            </div>
+                             
+                        </div>
+                        
+                    </div>
+                    <!-- end slider -->
                 </div>
+            </div>
                 <!-- end row -->
 
                 <!-- <div class='col_1 hr center'></div> -->
@@ -265,6 +351,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
         <!-- <script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
         <script>window.jQuery.mobile || document.write('<script src="js/vendor/jquery.mobile-1.2.0.min.js"><\/script>')</script> -->
+
         <!-- less parser -->
         <script src="js/vendor/less-1.3.0.min.js"></script>
 
@@ -276,6 +363,8 @@
         <script type ='text/javascript' src ='js/vendor/jquery.iosslider.min.js'></script>
 
          <script type ='text/javascript' src ='js/vendor/highlight.js'></script>
+
+         <script type ='text/javascript' src ='js/vendor/jquery.easing.js'></script>
 
         <!-- some js tools such as modal, tooltip... -->
         <script src="js/vendor/modal.js"></script>

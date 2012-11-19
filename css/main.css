@@ -248,7 +248,7 @@ textarea[contenteditable] {
 }
 
 
-body{display:none;}
+/* body{display:none;} */
 
 .highlight{
     background:tomato;
@@ -267,3 +267,130 @@ body{display:none;}
 
 }
 
+header{
+    background-image:url(../img/cmg-top-bg.jpg);
+    height:40px;
+}
+header nav{margin:0 auto;}
+header .button-group .button{
+    box-shadow:0 1px 2px -1px rgba(255,255,255,.6);
+    padding:7px 15px;
+}
+
+/* slider container */
+.iosSlider.banner {
+    /* required */
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    
+    width:100%;
+    height: 250px;
+    margin:10px auto;
+
+}
+
+/* slider */
+.iosSlider.banner .slider {
+    /* required */
+    width: 100%;
+    height: 100%;
+
+}
+
+/* slide */
+.iosSlider.banner .slider .slide {
+    /* required */
+    float: left;
+    
+    width: 100%;
+    height: 250px;
+}
+
+/* .iosSlider.banner .slider .slide.item1 .inner{
+    background:url(img/top/cmg-banner1.jpg); 
+}
+.iosSlider.banner .slider .slide.item2 .inner{
+    background:url(img/top/cmg-banner2.jpg); 
+}
+.iosSlider.banner .slider .slide.item3 .inner{
+    background:url(img/top/cmg-banner3.jpg); 
+}
+.iosSlider.banner .slider .slide.item4 .inner{
+    background:url(img/top/cmg-banner4.jpg); 
+} */
+.iosSlider .slider .slide .inner{
+    width:95%;
+    height:100%;
+    margin:0 auto;
+}
+.iosSlider.banner .slider .inner .text1{
+    background: none repeat scroll 0 0 #000000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    right: 150px;
+    top: 30px;
+    padding: 0 2px 0 7px;
+    height: 70px;
+    color:white;
+    font-size: 420%;
+    line-height: 73px;
+    padding: 0 8px;
+}
+.iosSlider.banner .slider .inner .text2 {
+background: none repeat scroll 0 0 #000000;
+opacity: 0;
+filter: alpha(opacity=0);
+padding: 5px 7px 7px;
+position: absolute;
+right: 0;
+top: 100px;
+color:white;
+}
+/* end banner iosslider */
+
+
+/* slider container */
+.iosSlider.row1 {
+    /* required */
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    
+    width:100%;
+    height: 140px;
+    margin:10px auto;
+
+}
+
+/* slider */
+.iosSlider.row1 .slider {
+    /* required */
+    width: 100%;
+    height: 100%;
+
+}
+
+/* slide */
+.iosSlider.row1 .slider .slide {
+    /* required */
+    float: left;
+    
+    width: 16.666666666%;
+    height: 140px;
+}
+.iosSlider.row1 .slider .slide .inner{
+    width:100px;
+    height:100%;
+    margin:0 auto;
+}
+.iosSlider.row1 .slider .slide .inner img {
+    box-shadow: 0 18px 5px -12px rgba(0,0,0,.5);
+}
+
+
+
+footer ul li{text-transform:capitalize;}

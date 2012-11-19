@@ -56,12 +56,10 @@
 	header .col_7 { width:15%;}
 	.button.large{padding:12px;}
 	header .col_2{width:58%;}
-	.content{width:70%;}
-	.col_3{margin-left:1%;margin-right:1%;margin-bottom:10px;}
 
 	header .button{padding:7px 25px;}
 	header .button-group{padding:4px;}
-	.hide-ipad-landscape{display:none;}
+
 	.size:after{content:' and landscape';}
 	.button.large{width:320px!important;}
 }
@@ -84,14 +82,14 @@
 
 	/* user styles goes here */
 
-
+	header .col_2{width:58%;}
 	header .logo { width:15%;}
-	header .button{padding:7px 10px;}
+	header .button{padding:7px 25px!important;}
 	header .button-group{padding:4px;}
 
 	.topButtons .button.large{width:300px;}
 	.content{width:95%;}
-	.hide-ipad-landscape{display:block;}
+
 	.size:after{content:' and portrait (ipad)';}
 
 }
@@ -102,7 +100,7 @@
 */
 @media handheld, only screen and (max-width: 800px) {
 	header .button{padding:7px 20px;}
-	.hide-ipad-landscape{display:block;}
+
 }
 
 
@@ -113,7 +111,7 @@
 @media handheld, only screen and (max-width: 672px) {
 	header .button{padding:6px 10px;font-size:12px;}
 	header .button-group{padding:6px;}
-	.hide-ipad-landscape{display:block;}
+
 }
 
 /* 
@@ -122,7 +120,7 @@
 @media handheld, only screen and (max-width: 600px) {
 
 	.col_2 .button.large{padding:12px;}
-	.hide-ipad-landscape{display:block;}
+
 
 }
 
@@ -151,7 +149,7 @@
 	/* user styles goes here */
 	.button{padding:6px 5px;}
 	header .search-container{display:none;}
-	.hide-ipad-landscape{display:block;}
+
 
 }
 
@@ -182,7 +180,7 @@
 	}
 
 	/* user styles goes here */
-	.hide-ipad-landscape{display:block;}
+
 	.logo{display:none;}
 	header .button-group .button{padding:7px 6px!important;}
 }
@@ -193,7 +191,7 @@
 @media handheld, only screen and (max-width: 240px) {
 	
 	/* user styles goes here */
-	.hide-ipad-landscape{display:block;}
+
 
 }
 
