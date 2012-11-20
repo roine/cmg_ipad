@@ -1,73 +1,47 @@
+// 1) ios slider conf
+// 2) jQuery method to center the modal
+// 3) hide URL on Load and get the content then display it in a modal
+// 4) query loader conf (page loading effect)
+// 5) search highlight with overlay
 
-  $('.iosSlider.banner').iosSlider({
+
+
+/********************
+ *
+ * 1) ios slider conf
+ *
+********************/
+
+$('.iosSlider.banner').iosSlider({
+  desktopClickDrag: true,
+  snapToChildren: true,
+  infiniteSlider: true,
+  autoSlide: true,
+  autoSlideTimer:10000,
+  keyboardControls: true
+});
+  
+
+
+$('.iosSlider.rows, .iosSlider.last-row').iosSlider({
     desktopClickDrag: true,
     snapToChildren: true,
     infiniteSlider: true,
-    navSlideSelector: '.sliderContainer .slideSelectors .item',
-    onSlideComplete: slideComplete,
-    onSliderLoaded: sliderLoaded,
-    onSlideChange: slideChange,
-    autoSlide: true,
-    scrollbar: true,
-    scrollbarContainer: '.sliderContainer .scrollbarContainer',
-    scrollbarMargin: '0',
-    scrollbarBorderRadius: '0',
-    keyboardControls: true
-  });
-  
-  // prettyPrint();
-
-
-
-function slideChange(args) {
-      
-  $('.sliderContainer .slideSelectors .item').removeClass('selected');
-  $('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
-
-}
-
-function slideComplete(args) {
-    
-  $(args.sliderObject).find('.text1, .text2').attr('style', '');
-  console.log($(args.sliderObject).find('.text1, .text2'))
-  $(args.currentSlideObject).find('.text1').animate({
-    right: '100px',
-    opacity: '0.8'
-  }, 400, 'easeOutQuint');
-  
-  $(args.currentSlideObject).find('.text2').delay(200).animate({
-    right: '50px',
-    opacity: '0.8'
-  }, 400, 'easeOutQuint');
-  
-}
-
-function sliderLoaded(args) {
-    
-  slideComplete(args);
-  
-  slideChange(args);
-  
-}
-
-$('.iosSlider.row1').iosSlider({
-    desktopClickDrag: true,
-    snapToChildren: true,
-    infiniteSlider: true,
-    navSlideSelector: '.sliderContainer .slideSelectors .item',
-    onSlideComplete: slideComplete,
-    onSliderLoaded: sliderLoaded,
-    onSlideChange: slideChange,
-    scrollbar: true,
-    scrollbarContainer: '.sliderContainer .scrollbarContainer',
-    scrollbarMargin: '0',
-    scrollbarBorderRadius: '0',
-    keyboardControls: true
+    keyboardControls: true,
+    snapFrictionCoefficient:0.95,
+    elasticPullResistance:0.9,
+    scrollbar:true
   });
 
-// end slide conf
- 
 
+
+
+
+/***************************************
+ *
+ *  2) jQuery method to center the modal
+ *
+***************************************/
 
 jQuery.fn.center = function(parent) {
     if (parent) {
@@ -82,6 +56,15 @@ jQuery.fn.center = function(parent) {
     });
 return this;
 }
+
+
+
+
+/********************************************************************
+ *
+ * 3) hide URL on Load and get the content then display it in a modal
+ *
+********************************************************************/
 
 MBP.hideUrlBarOnLoad();
 $('.hasModal').on('click', function(event){openPopup($(this))});
@@ -109,41 +92,54 @@ var openPopup = function(that){
             $('.modal-body').css({'height':$('.modal-body').parent().height()-$('.modal-header').outerHeight()-($('.modal-body').outerHeight()-$('.modal-body').height())-20})
             // display the popup
             Avgrund.show( "#default-popup" );
-        }
-        
+        } 
     });
 	return that;
 }
-
 // close the popup on click on the cross
 $('.close').on('touchstart', function(){Avgrund.hide()});
 $('.close').on('click', function(){Avgrund.hide()});
 
-// Adjust the  on resising
+// keep the modal and the overlay clean while resizing
+$(window).resize(function(){
+    var w = $(window).width();
+    var h = $(window).height();
+    $('#overlay').css({
+        height:h+'px',
+        width:w+'px'
+    })
+    $('.modal-body').css({'height':$('.modal-body').parent().height()-$('.modal-header').outerHeight()-($('.modal-body').outerHeight()-$('.modal-body').height())-20})
+});
 
+
+
+
+/***********************************************
+ *
+ * 4) query loader conf (page loading effect)
+ *
+***********************************************/
 
 window.addEventListener('DOMContentLoaded', function() {
+    
     $("body").queryLoader2({
         barColor: "#ffffff",
         backgroundColor: "#000000",
-        percentage: false,
         barHeight: 1,
         completeAnimation: "grow",
-        minimumTime: 100
-    });
-    $('body').removeClass('invisible')
+        minimumTime: 100,
+        percentage:true,
+    }).removeClass('invisible');
+
 });
 
-        
-// end on dom ready
 
-// help for device sizing, erase once dev finish
-$('.size').text($(document).width())
 
- $(window).on('resize', function(){
- 	$('.size').text($(document).width())
- });
-
+/***********************************
+ *
+ * 5) search highlight with overlay
+ *
+***********************************/
 
 var w = $(window).width();
 var h = $(window).height();
@@ -177,13 +173,12 @@ $('.search input').keyup(function(){
  })
 });
 
-$(window).resize(function(){
-    var w = $(window).width();
-    var h = $(window).height();
-    $('#overlay').css({
-        height:h+'px',
-        width:w+'px'
-    })
-    $('.modal-body').css({'height':$('.modal-body').parent().height()-$('.modal-header').outerHeight()-($('.modal-body').outerHeight()-$('.modal-body').height())-20})
-});
+
+// help for device sizing, erase once dev finish
+$('.size').text($(document).width())
+
+ $(window).on('resize', function(){
+  $('.size').text($(document).width())
+ });
+
 

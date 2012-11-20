@@ -16,6 +16,7 @@ input,
 select,
 textarea {
     color: #222;
+    height:100%;
 }
 
 body {
@@ -308,23 +309,16 @@ header .button-group .button{
     height: 250px;
 }
 
-/* .iosSlider.banner .slider .slide.item1 .inner{
-    background:url(img/top/cmg-banner1.jpg); 
-}
-.iosSlider.banner .slider .slide.item2 .inner{
-    background:url(img/top/cmg-banner2.jpg); 
-}
-.iosSlider.banner .slider .slide.item3 .inner{
-    background:url(img/top/cmg-banner3.jpg); 
-}
-.iosSlider.banner .slider .slide.item4 .inner{
-    background:url(img/top/cmg-banner4.jpg); 
-} */
-.iosSlider .slider .slide .inner{
+.iosSlider.banner .slider .slide .inner{
     width:95%;
     height:100%;
     margin:0 auto;
 }
+.iosSlider .slider .slide .inner img{
+    margin: 0 auto;
+    display: block; 
+}
+
 .iosSlider.banner .slider .inner .text1{
     background: none repeat scroll 0 0 #000000;
     opacity: 0;
@@ -353,7 +347,7 @@ color:white;
 
 
 /* slider container */
-.iosSlider.row1 {
+.iosSlider.rows {
     /* required */
     position: relative;
     top: 0;
@@ -367,7 +361,7 @@ color:white;
 }
 
 /* slider */
-.iosSlider.row1 .slider {
+.iosSlider.rows .slider {
     /* required */
     width: 100%;
     height: 100%;
@@ -375,22 +369,54 @@ color:white;
 }
 
 /* slide */
-.iosSlider.row1 .slider .slide {
+.iosSlider.rows .slider .slide {
     /* required */
     float: left;
     
-    width: 16.666666666%;
+    width: 16.6665%;
     height: 140px;
 }
-.iosSlider.row1 .slider .slide .inner{
+.iosSlider.rows .slider .slide .inner{
     width:100px;
     height:100%;
     margin:0 auto;
 }
-.iosSlider.row1 .slider .slide .inner img {
+.iosSlider.rows .slider .slide .inner img {
     box-shadow: 0 18px 5px -12px rgba(0,0,0,.5);
+    border-radius:20px;
 }
 
+
+/* slider container */
+.iosSlider.last-row{
+    /* required */
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    
+    width:100%;
+    height: 106px;
+    margin:10px auto;
+
+}
+
+/* slider */
+.iosSlider.last-row .slider {
+    /* required */
+    width: 100%;
+    height: 100%;
+
+}
+
+/* slide */
+.iosSlider.last-row .slider .slide {
+    /* required */
+    float: left;
+    
+    width: 33.333%;
+    height: 106px;
+}
 
 
 footer ul li{text-transform:capitalize;}
