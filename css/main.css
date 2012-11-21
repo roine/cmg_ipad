@@ -360,15 +360,21 @@ header .col_2{width:58%;}
 
 
 .banner .iosSlider .slider .slide .inner{
-    width:95%;
+    width:90%;
     height:100%;
     margin:0 auto;
+}
+.iosSlider .slider .slide .inner img.left{
+
+}
+.iosSlider .slider .slide .inner img.right{
+    
 }
 .iosSlider .slider .slide .inner img{
     margin: 0 auto;
     display: block;
-    -webkit-transition:all 1.5s ease;
-    -webkit-transform:perspective(800px) scale(.9);
+    -webkit-transition:all 1s ease;
+    -webkit-transform:perspective(800px) scale(.8);
     -webkit-transform-origin:50% 50%;
 }
 

@@ -26,6 +26,18 @@
         $('.sliderContainer .slide').removeClass('selected');
         $('.sliderContainer .slide').eq(args.currentSlideNumber - 1).addClass('selected');
 
+        
+        $('.banner .slide').removeClass('left right');
+        if($('.banner .slide.selected').prev()[0] === undefined)
+            $('.banner .slide:last-child').addClass('left');
+        else
+            $('.banner .slide.selected').prev().addClass('left');
+        // could also use the sibling selector in css
+        if($('.banner .slide.selected').next()[0] === undefined)
+            $('.banner .slide:first-child').addClass('right');
+        else
+            $('.banner .slide.selected').next().addClass('right');
+
         $('.sliderContainer .slideSelectors .item').removeClass('selected');
         $('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
 
@@ -54,6 +66,8 @@
         elasticPullResistance: 0.9,
         onSliderLoaded: moveToLeft
     });
+
+
 
 
     /***************************************
