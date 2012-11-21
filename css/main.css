@@ -279,6 +279,9 @@ header .button-group .button{
 }
 header .col_2{width:58%;}
 
+
+
+
 .sliderContainer .slideSelectors {
     position: relative;
     bottom: 35px;
@@ -354,6 +357,8 @@ header .col_2{width:58%;}
     height: 100%;
 }
 
+
+
 .banner .iosSlider .slider .slide .inner{
     width:95%;
     height:100%;
@@ -361,7 +366,15 @@ header .col_2{width:58%;}
 }
 .iosSlider .slider .slide .inner img{
     margin: 0 auto;
-    display: block; 
+    display: block;
+    -webkit-transition:all 1.5s ease;
+    -webkit-transform:perspective(800px) scale(.9);
+    -webkit-transform-origin:50% 50%;
+}
+
+.iosSlider .slider .slide.selected .inner img{
+
+    -webkit-transform:perspective(800px) scale(1.05);
 }
 /* end banner iosslider */
 

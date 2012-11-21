@@ -4,13 +4,12 @@
 // 4) query loader conf (page loading effect)
 // 5) search highlight with overlay
 
+'use strict';
+/*jslint browser: true*/
 
+(function ($, window, undefined) {
 
-
-(function ($) {
-
-    'use strict';
-    /*jslint browser: true*/
+    
 
     /********************
      *
@@ -24,26 +23,14 @@
 
     }, slideChange = function (args) {
 
+        $('.sliderContainer .slide').removeClass('selected');
+        $('.sliderContainer .slide').eq(args.currentSlideNumber - 1).addClass('selected');
+
         $('.sliderContainer .slideSelectors .item').removeClass('selected');
         $('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
 
-    }, slideComplete = function (args) {
-
-        $(args.sliderObject).find('.text1, .text2').attr('style', '');
-
-        $(args.currentSlideObject).find('.text1').animate({
-            right: '100px',
-            opacity: '0.8'
-        }, 400, 'easeOutQuint');
-
-        $(args.currentSlideObject).find('.text2').delay(200).animate({
-            right: '50px',
-            opacity: '0.8'
-        }, 400, 'easeOutQuint');  
-
     }, sliderLoaded = function (args) {
 
-        slideComplete(args);
         slideChange(args);
 
     };
@@ -56,9 +43,8 @@
         autoSlideTimer: 10000,
         keyboardControls: true,
         onSlideChange: slideChange,
-        onSlideComplete: slideComplete,
         onSliderLoaded: sliderLoaded,
-        navSlideSelector: '.sliderContainer .slideSelectors .item',
+        navSlideSelector: '.sliderContainer .slideSelectors .item'
     });
 
     $('.iosSlider.rows, .iosSlider.last-row').iosSlider({
@@ -233,7 +219,7 @@
         $('.size').text($(document).width());
     });
 
-}(jQuery));
+}(jQuery, window));
 
 
 
