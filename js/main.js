@@ -18,11 +18,34 @@
      *
     ********************/
     var moveToLeft = function () {
+
         var left = $('.row1 .slider, .row2 .slider').css('left');
         $('.row1 .slider, .row2 .slider').css({'left': parseInt(left, 10) - 68}); /* 66 is halp the size of an icon */
-    }, colorSearch = function () {
-        var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        $('.icon-search').css({textShadow: '0 1px #' + randomColor});
+
+    }, slideChange = function (args) {
+
+        $('.sliderContainer .slideSelectors .item').removeClass('selected');
+        $('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+
+    }, slideComplete = function (args) {
+
+        $(args.sliderObject).find('.text1, .text2').attr('style', '');
+
+        $(args.currentSlideObject).find('.text1').animate({
+            right: '100px',
+            opacity: '0.8'
+        }, 400, 'easeOutQuint');
+
+        $(args.currentSlideObject).find('.text2').delay(200).animate({
+            right: '50px',
+            opacity: '0.8'
+        }, 400, 'easeOutQuint');  
+
+    }, sliderLoaded = function (args) {
+
+        slideComplete(args);
+        slideChange(args);
+
     };
 
     $('.banner .iosSlider').iosSlider({
@@ -32,7 +55,10 @@
         autoSlide: true,
         autoSlideTimer: 10000,
         keyboardControls: true,
-        onSlideChange: colorSearch
+        onSlideChange: slideChange,
+        onSlideComplete: slideComplete,
+        onSliderLoaded: sliderLoaded,
+        navSlideSelector: '.sliderContainer .slideSelectors .item',
     });
 
     $('.iosSlider.rows, .iosSlider.last-row').iosSlider({
@@ -89,7 +115,9 @@
                 $('.avgrund-popup').center(false);
 
                 // height of the modal - height of the header - padding of body - 20 for the margin
-                $('.modal-body').css({'height': $('.modal-body').parent().height() - $('.modal-header').outerHeight() - ($('.modal-body').outerHeight() - $('.modal-body').height()) - 20});
+                $('.modal-body').css({
+                    'height': $('.modal-body').parent().height() - $('.modal-header').outerHeight() - ($('.modal-body').outerHeight() - $('.modal-body').height()) - 20
+                });
                 // display the popup
                 Avgrund.show("#default-popup");
             }
@@ -114,11 +142,16 @@
     $(window).resize(function () {
         var w = $(window).width(),
         h = $(window).height();
+
         $('#overlay').css({
             height: h + 'px',
             width: w + 'px'
         });
-        $('.modal-body').css({'height': $('.modal-body').parent().height() - $('.modal-header').outerHeight() - ($('.modal-body').outerHeight() - $('.modal-body').height()) - 20});
+
+        $('.modal-body').css({
+            'height': $('.modal-body').parent().height() - $('.modal-header').outerHeight() - ($('.modal-body').outerHeight() - $('.modal-body').height()) - 20
+        });
+
     });
 
 
