@@ -9,8 +9,9 @@
 
 (function ($, window, undefined) {
 
-    
+    // watch the ipad capability
 
+    
     /********************
      *
      * 1) ios slider conf
@@ -23,27 +24,40 @@
 
     }, slideChange = function (args) {
 
-        $('.sliderContainer .slide').removeClass('selected');
-        $('.sliderContainer .slide').eq(args.currentSlideNumber - 1).addClass('selected');
-
-        
+        $('.sliderContainer.banner .slider .slide').removeClass('current');
+        $('.sliderContainer.banner .slider .slide:eq(' + (args.currentSlideNumber - 1) + ')').addClass('current');
+    
         $('.banner .slide').removeClass('left right');
-        if($('.banner .slide.selected').prev()[0] === undefined)
+        if($('.banner .slide.current').prev()[0] === undefined)
             $('.banner .slide:last-child').addClass('left');
         else
-            $('.banner .slide.selected').prev().addClass('left');
+            $('.banner .slide.current').prev().addClass('left');
         // could also use the sibling selector in css
-        if($('.banner .slide.selected').next()[0] === undefined)
+        if($('.banner .slide.current').next()[0] === undefined)
             $('.banner .slide:first-child').addClass('right');
         else
-            $('.banner .slide.selected').next().addClass('right');
+            $('.banner .slide.current').next().addClass('right');
 
-        $('.sliderContainer .slideSelectors .item').removeClass('selected');
-        $('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+        // transition on loading have a problem
+        $('.banner .left, .banner .right, .banner .current').removeClass('transition');
+        $('.left, .right, .current').addClass('transition');
+
+        $('.sliderContainer.banner .slideSelectors .item').removeClass('selected');
+        $('.sliderContainer.banner .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
 
     }, sliderLoaded = function (args) {
+        // fix an error on the transition while loading the slide
+        $('.sliderContainer.banner .slider .slide:eq(' + (args.currentSlideNumber - 1) + ')').addClass('current');
 
-        slideChange(args);
+        if($('.banner .slide.current').prev()[0] === undefined)
+            $('.banner .slide:last-child').addClass('left');
+        else
+            $('.banner .slide.current').prev().addClass('left');
+        // could also use the sibling selector in css
+        if($('.banner .slide.current').next()[0] === undefined)
+            $('.banner .slide:first-child').addClass('right');
+        else
+            $('.banner .slide.current').next().addClass('right');
 
     };
 
