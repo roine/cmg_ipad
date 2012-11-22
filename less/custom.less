@@ -170,8 +170,8 @@ header{
 	.description{
 		color:rgba(0,0,0,.6);
 		text-shadow:0 1px white;
-		font-size:14px;
-		padding:5px 0;
+		font-size:12px;
+		padding:20px 0;
 		height: 15px;
 		text-transform:capitalize;
 		text-align:left;
@@ -214,12 +214,21 @@ footer{
 // check the grid
 // [class^="col_"]{border:1px solid silver;}
 // check the size
-.size{position:fixed;top:25%;left:0;background:rgba(0,0,0,.8);padding:10px;color:white;border-radius:0 3px 3px 0;z-index:100;}
+.size, .bookmarklet{
+	position:fixed;
+	bottom:25%;
+	z-index:100;
+}
+.size{
+	left:0;
+	background:rgba(0,0,0,.8);
+	padding:10px;
+	color:white;
+	border-radius:0 3px 3px 0;
+	
+}
 .bookmarklet{
-    position:fixed;
-    top:25%;
     right:0;
-    z-index:100;
 }
 .hr{
 	border : 0;

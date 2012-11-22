@@ -19,8 +19,8 @@
     ********************/
     var moveToLeft = function () {
 
-        var left = $('.row1 .slider, .row2 .slider').css('left');
-        $('.row1 .slider, .row2 .slider').css({'left': parseInt(left, 10) - 68}); /* 66 is halp the size of an icon */
+        // var left = $('.row1 .slider, .row2 .slider').css('left');
+        // $('.row1 .slider, .row2 .slider').css({'left': parseInt(left, 10) - 68}); /* 66 is halp the size of an icon */
 
     }, slideChange = function (args) {
 
@@ -198,6 +198,37 @@
      *
     ***********************************/
 
+    var css = {}, 
+        resetCss = function () {
+            $('#overlay').remove();
+
+            $('.iosSlider').css({
+                'z-index': css.iosSlider.zindex, 
+                'perspective': css.iosSlider.perspective, 
+                '-webkit-perspective': css.iosSlider.perspective
+            });
+
+            $('.slider').css({
+                'perspective': css.slider.perspective, 
+                '-webkit-perspective': css.slider.perspective
+            });
+        };
+
+        // save the current css
+    css = {
+        iosSlider: {
+            zindex: $('.iosSlider').css('z-index'),
+            perspective: $('.iosSlider').css('perspective')
+        },
+        slider: {
+            perspective: $('.slider').css('perspective'),
+            transform: $('.slider').css('transform')
+        },
+        slide: {
+            transform: $('.slider').css('transform')
+        }
+    };
+
 
     $('.search input').keyup(function () {
         var w = $(window).width(),
@@ -221,24 +252,35 @@
         $("body").unhighlight()
             .highlight(content);
 
-        $('.iosSlider').css({'z-index': '', 'perspective': '', '-webkit-perspective': ''});
-        $('.slider').css({'perspective': '', '-webkit-perspective': ''});
+        // remove the transform and z-index to fix the z-index into the child
+        $('.iosSlider').css({
+            'z-index': '', 
+            'perspective': '', 
+            '-webkit-perspective': ''
+        });
+
+        $('.slider').css({
+            'perspective': '', 
+            '-webkit-perspective': '',
+        });
+
 
 
         if ($('#overlay').length <= 0) {
             $overlay.appendTo('body');
-        } else if (content === '') {
-            $('#overlay').remove();
-            $('.iosSlider').css({'z-index': '1', 'perspective': '1000px', '-webkit-perspective': '1000px'});
-            $('.slider').css({'perspective': '1000px', '-webkit-perspective': '1000px'});
+        } 
+
+        if (content === '') {
+           resetCss();
         }
+
         // Click overlay to remove
         $('#overlay').click(function () {
-            $('.iosSlider').css({'z-index': '1', 'perspective': '1000px', '-webkit-perspective': '1000px'});
-            $('.slider').css({'perspective': '1000px', '-webkit-perspective': '1000px'});
-            $(this).remove();
+            resetCss();
         });
     });
+    // end onkeyup
+
 
     // help for device sizing, erase once dev finish
     $('.size').text($(document).width());
