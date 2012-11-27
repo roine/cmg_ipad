@@ -99,7 +99,8 @@
 
 	.size:after{content:' and portrait (ipad)';}
 	.iosSlider.rows .slider .slide {
-	    width: 16.66666%;
+	    width: 18.181818%;
+	    /* 18.1818 for 5.5 icons */
 	    /* 6 icons 100/6 = 16.66666 */
 	}
 
