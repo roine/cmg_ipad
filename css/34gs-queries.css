@@ -98,6 +98,10 @@
 	
 
 	.size:after{content:' and portrait (ipad)';}
+	.iosSlider.rows .slider .slide {
+	    width: 16.66666%;
+	    /* 6 icons 100/6 = 16.66666 */
+	}
 
 }
 
@@ -106,12 +110,6 @@
 	============================================== TABLETS LANDSCAPE ====
 */
 @media handheld, only screen and (max-width: 800px) {
-	header .button{padding:7px 20px;}
-	header .button{padding:7px 15px!important;}
-	.iosSlider.rows .slider .slide {
-	    width: 16.66666%;
-	    /* 6 icons 100/6 = 16.66666 */
-	}
 
 }
 

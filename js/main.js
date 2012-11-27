@@ -17,12 +17,7 @@
      * 1) ios slider conf
      *
     ********************/
-    var moveToLeft = function () {
-
-        var left = $('.row1 .slider, .row2 .slider').css('left');
-        $('.row1 .slider, .row2 .slider').css({'left': parseInt(left, 10) - 68}); /* 66 is halp the size of an icon */
-
-    }, slideChange = function (args) {
+    var slideChange = function (args) {
 
         $('.sliderContainer.banner .slider .slide').removeClass('current');
         $('.sliderContainer.banner .slider .slide:eq(' + (args.currentSlideNumber - 1) + ')').addClass('current');
@@ -77,8 +72,7 @@
         desktopClickDrag: true,
         snapToChildren: true,
         snapFrictionCoefficient: 0.95,
-        elasticPullResistance: 0.9,
-        onSliderLoaded: moveToLeft
+        elasticPullResistance: 0.9
     });
 
 
