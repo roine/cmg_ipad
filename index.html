@@ -42,6 +42,9 @@
         <link rel="stylesheet" href="css/font-awesome.css">
         <!-- my media queries -->
         <link rel="stylesheet" href="css/34gs-queries.css">
+        <!-- to remove once on prod -->
+        <script type="text/javascript" src="js/vendor/css-refresh.js"></script>
+
         <!-- modernizr -->
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
 
@@ -101,7 +104,7 @@
                             <div class = 'slider'>
                             
                                 <!-- slides -->
-                                <div class = 'slide item1'>
+                                <div class = 'slide item1 hasModal' data-modal='startTrading'>
                                     <div class='inner'>
                                         <img src='img/top/top-banner1.jpg'>
                                     </div>
@@ -271,19 +274,20 @@
                         
                             <div class = 'slide item1 hasModal'>
                                 <div class='inner'>
-                                    <img src='img/row3/cmg-About-US.png'>
-                                    <div class='description'>
-                                        About Us
-                                    </div>
+                                  <img src='img/row3/cmg-About-US.png'>
+                                  <div class='description'>
+                                       About Us
+                                   </div>
+
                                 </div>
                             </div>
                             
                             <div class = 'slide item2'>
                                 <div class='inner'>
                                     <img src='img/row3/cmg-Fund-My-Account.png'>
-                                    <div class='description'>
-                                        Fund my account
-                                    </div>
+                                  <div class='description'>
+                                       Fund my account
+                                   </div>
                                 </div>
                                  
                             </div>
@@ -302,27 +306,28 @@
                                 <div class='inner'>
                                     <img src='img/row3/cmg-Online-Payments.png'>
                                     <div class='description'>
-                                        Online Payments
-                                    </div>
+                                       Online Payments
+                                   </div>
                                 </div>
                             </div>
                             
                             <div class = 'slide item5'>
                                 <div class='inner'>
-                                    <img src='img/row3/cmg-Union-Pay.png'>
+                                  <img src='img/row3/cmg-Union-Pay.png'>
                                     <div class='description'>
-                                        Union Pay
-                                    </div>
+                                       Union pay
+                                   </div>
                                 </div>
                                 
                             </div>
                             
                             <div class = 'slide item6'>
                                 <div class='inner'>
-                                    <img src='img/row3/cmg-White-Label.png'>
-                                    <div class='description'>
-                                        White Label
-                                    </div>
+                                  <img src='img/row3/cmg-White-Label.png'>
+                                  <div class='description'>
+                                      White Label
+                                  </div>
+
                                 </div>
                                 
                             </div>
@@ -438,7 +443,7 @@
                 </div>
                 <!-- end slidercontainer -->
 
-
+                <div class='clearfix'>
                 
                
                 
@@ -483,12 +488,16 @@
 
         <!-- some js tools such as modal, tooltip... -->
         <script src="js/vendor/modal.js"></script>
+
+        <script type='application/javascript' src='js/vendor/fastClick.js'></script>
         <!-- my configs -->
         <script src="js/main.js"></script>
 
         <!-- queries for javascript -->
         <script src="js/vendor/enquire.js"></script>
         <script src="js/media-queries.js"></script>
+
+
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

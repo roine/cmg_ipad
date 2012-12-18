@@ -17,12 +17,14 @@
      * 1) ios slider conf
      *
     ********************/
+
     var moveToLeft = function () {
 
         // var left = $('.row1 .slider, .row2 .slider').css('left');
         // $('.row1 .slider, .row2 .slider').css({'left': parseInt(left, 10) - 68}); /* 66 is halp the size of an icon */
 
     }, slideChange = function (args) {
+
 
         $('.sliderContainer.banner .slider .slide').removeClass('current');
         $('.sliderContainer.banner .slider .slide:eq(' + (args.currentSlideNumber - 1) + ')').addClass('current');
@@ -77,8 +79,7 @@
         desktopClickDrag: true,
         snapToChildren: true,
         snapFrictionCoefficient: 0.95,
-        elasticPullResistance: 0.9,
-        onSliderLoaded: moveToLeft
+        elasticPullResistance: 0.9
     });
 
 
@@ -118,7 +119,7 @@
         $.getJSON('js/data.json', function (data) {
 
         }).error(function (e) {
-            console.log('error');
+            console.log(e.responseText);
         }).success(function (data) {
             if (data[type]) {
                 // set the content
@@ -288,6 +289,10 @@
     $(window).on('resize', function () {
         $('.size').text($(document).width());
     });
+
+    window.addEventListener('load', function() {
+        new FastClick(document.body);
+    }, false);
 
 }(jQuery, window));
 
