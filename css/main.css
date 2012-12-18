@@ -17,6 +17,11 @@ select,
 textarea {
     color: #222;
     height:100%;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
 }
 
 body {
@@ -486,18 +491,24 @@ header .col_2{width:58%;}
 .iosSlider.last-row .slider .slide {
     /* required */
     float: left;
-    width: 40%;
+    width: 28.5714%;
+    /*3.5 slides*/
+    /*width:40%;*/
     height: 100%;
 }
 
 .last-row img{
     box-shadow:0 10px 5px -4px rgba(0,0,0,.3);
+    position:relative;
+    display:block; 
+    width:200px;
+
 }
 
 
 
 footer ul li{text-transform:capitalize;}
-.content{width:95%;}
+.content{width:100%;}
 
 .description{
         color:rgba(0,0,0,.6);
@@ -509,4 +520,8 @@ footer ul li{text-transform:capitalize;}
         text-align:center;
         font-weight:bold;
         font-size:12px;
+}
+.content .sliderContainer{
+    width:95%;
+    margin:30px auto 0;
 }

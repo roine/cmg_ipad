@@ -42,7 +42,9 @@
         <link rel="stylesheet" href="css/font-awesome.css">
         <!-- my media queries -->
         <link rel="stylesheet" href="css/34gs-queries.css">
+        <!-- to remove once on prod -->
         <script type="text/javascript" src="js/vendor/css-refresh.js"></script>
+
         <!-- modernizr -->
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
 
@@ -102,7 +104,7 @@
                             <div class = 'slider'>
                             
                                 <!-- slides -->
-                                <div class = 'slide item1'>
+                                <div class = 'slide item1 hasModal' data-modal='startTrading'>
                                     <div class='inner'>
                                         <img src='img/top/top-banner1.jpg'>
                                     </div>
@@ -441,7 +443,7 @@
                 </div>
                 <!-- end slidercontainer -->
 
-
+                <div class='clearfix'>
                 
                
                 
@@ -486,12 +488,16 @@
 
         <!-- some js tools such as modal, tooltip... -->
         <script src="js/vendor/modal.js"></script>
+
+        <script type='application/javascript' src='js/vendor/fastClick.js'></script>
         <!-- my configs -->
         <script src="js/main.js"></script>
 
         <!-- queries for javascript -->
         <script src="js/vendor/enquire.js"></script>
         <script src="js/media-queries.js"></script>
+
+
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

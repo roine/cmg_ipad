@@ -112,7 +112,7 @@
         $.getJSON('js/data.json', function (data) {
 
         }).error(function (e) {
-            console.log('error');
+            console.log(e.responseText);
         }).success(function (data) {
             if (data[type]) {
                 // set the content
@@ -240,6 +240,10 @@
     $(window).on('resize', function () {
         $('.size').text($(document).width());
     });
+
+    window.addEventListener('load', function() {
+        new FastClick(document.body);
+    }, false);
 
 }(jQuery, window));
 
