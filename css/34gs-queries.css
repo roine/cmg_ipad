@@ -63,7 +63,7 @@
 	.button.large{width:320px!important;}
 
 	.iosSlider.rows .slider .slide {
-	    width: 15.3846%;
+	    /*width: 15.3846%;*/
 	    /* 6.5 icons 100/6.5 = 15.3846*/
 	    /* display 7 icons 100/7= 14.2857143 */
 	    /* width:12.5%; */
