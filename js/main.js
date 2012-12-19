@@ -4,10 +4,12 @@
 // 4) query loader conf (page loading effect)
 // 5) search highlight with overlay
 
-'use strict';
-/*jslint browser: true*/
+
 
 (function ($, window, undefined) {
+
+    'use strict';
+    /*jslint browser: true*/
 
     // watch the ipad capability
 
@@ -18,27 +20,28 @@
      *
     ********************/
 
-    var moveToLeft = function () {
-
-        // var left = $('.row1 .slider, .row2 .slider').css('left');
-        // $('.row1 .slider, .row2 .slider').css({'left': parseInt(left, 10) - 68}); /* 66 is halp the size of an icon */
-
-    }, slideChange = function (args) {
+    var slideChange = function (args) {
 
 
         $('.sliderContainer.banner .slider .slide').removeClass('current');
         $('.sliderContainer.banner .slider .slide:eq(' + (args.currentSlideNumber - 1) + ')').addClass('current');
     
         $('.banner .slide').removeClass('left right');
-        if($('.banner .slide.current').prev()[0] === undefined)
+        if($('.banner .slide.current').prev()[0] === undefined){
             $('.banner .slide:last-child').addClass('left');
-        else
+        }  
+        else{
             $('.banner .slide.current').prev().addClass('left');
+        }
+            
         // could also use the sibling selector in css
-        if($('.banner .slide.current').next()[0] === undefined)
+        if($('.banner .slide.current').next()[0] === undefined){
             $('.banner .slide:first-child').addClass('right');
-        else
+        }   
+        else{
             $('.banner .slide.current').next().addClass('right');
+        }
+            
 
         // transition on loading have a problem
         $('.banner .left, .banner .right, .banner .current').removeClass('transition');
@@ -51,15 +54,23 @@
         // fix an error on the transition while loading the slide
         $('.sliderContainer.banner .slider .slide:eq(' + (args.currentSlideNumber - 1) + ')').addClass('current');
 
-        if($('.banner .slide.current').prev()[0] === undefined)
+        if($('.banner .slide.current').prev()[0] === undefined){
             $('.banner .slide:last-child').addClass('left');
-        else
-            $('.banner .slide.current').prev().addClass('left');
+        }
+            
+        else{
+             $('.banner .slide.current').prev().addClass('left');
+        }
+           
         // could also use the sibling selector in css
-        if($('.banner .slide.current').next()[0] === undefined)
+        if($('.banner .slide.current').next()[0] === undefined){
             $('.banner .slide:first-child').addClass('right');
-        else
+        }
+            
+        else{
             $('.banner .slide.current').next().addClass('right');
+        }
+           
 
     };
 
@@ -257,12 +268,14 @@
         $('.iosSlider').css({
             'z-index': '', 
             'perspective': '', 
-            '-webkit-perspective': ''
+            '-webkit-perspective': '',
+            '-moz-perspective': ''
         });
 
         $('.slider').css({
             'perspective': '', 
             '-webkit-perspective': '',
+            '-moz-perspective': ''
         });
 
 
@@ -293,9 +306,6 @@
         $('.size').text($(document).width());
     });
 
-    window.addEventListener('load', function() {
-        new FastClick(document.body);
-    }, false);
 
 }(jQuery, window));
 
