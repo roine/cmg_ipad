@@ -158,10 +158,10 @@
         var w = $(window).width(),
         h = $(window).height();
 
-        $('#overlay').css({
-            height: h + 'px',
-            width: w + 'px'
-        });
+        // $('#overlay').css({
+        //     height: h + 'px',
+        //     width: w + 'px'
+        // });
 
         $('.modal-body').css({
             'height': $('.modal-body').parent().height() - $('.modal-header').outerHeight() - ($('.modal-body').outerHeight() - $('.modal-body').height()) - 20
@@ -178,7 +178,7 @@
      *
     ***********************************************/
 
-    window.addEventListener('DOMContentLoaded', function () {
+    window.addEventListener('DOMContentLoaded', function() {
 
         $("body").queryLoader2({
             barColor: "#ffffff",
@@ -234,21 +234,21 @@
     $('.search input').keyup(function () {
         var w = $(window).width(),
             h = $(window).height(),
-            content = $(this).val(),
+            content = $(this).val();
         // create the overlay
-            $overlay = $('<div/>', {
-                'id': 'overlay',
-                css: {
-                    position   : 'absolute',
-                    height     : h + 'px',
-                    width      : w + 'px',
-                    left       : 0,
-                    top        : 0,
-                    background : '#000',
-                    opacity    : 0.85,
-                    zIndex     : 99
-                }
-            });
+            // $overlay = $('<div/>', {
+            //     'id': 'overlay',
+            //     css: {
+            //         position   : 'absolute',
+            //         height     : h + 'px',
+            //         width      : w + 'px',
+            //         left       : 0,
+            //         top        : 0,
+            //         background : '#000',
+            //         opacity    : 0.85,
+            //         zIndex     : 99
+            //     }
+            // });
 
         $("body").unhighlight()
             .highlight(content);
@@ -267,18 +267,21 @@
 
 
 
-        if ($('#overlay').length <= 0) {
-            $overlay.appendTo('body');
-        } 
 
-        if (content === '') {
-           resetCss();
-        }
+        // if ($('#overlay').length <= 0) {
+        //     $overlay.appendTo('body');
+        // } else if (content === '') {
+        //     $('#overlay').remove();
+        //     $('.iosSlider').css({'z-index': '1', 'perspective': '1000px', '-webkit-perspective': '1000px'});
+        //     $('.slider').css({'perspective': '1000px', '-webkit-perspective': '1000px'});
+        // }
+        // // Click overlay to remove
+        // $('#overlay').click(function () {
+        //     $('.iosSlider').css({'z-index': '1', 'perspective': '1000px', '-webkit-perspective': '1000px'});
+        //     $('.slider').css({'perspective': '1000px', '-webkit-perspective': '1000px'});
+        //     $(this).remove();
+        // });
 
-        // Click overlay to remove
-        $('#overlay').click(function () {
-            resetCss();
-        });
     });
     // end onkeyup
 
