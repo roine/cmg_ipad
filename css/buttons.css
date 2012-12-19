@@ -209,7 +209,8 @@
 
 .button-group{
   font-size: 0; /* Inline block elements gap - fix */
-  margin: 0;
+  margin: 0 auto;
+  display:block;
   padding: 0;
   background: rgba(0, 0, 0, .04);
   border-bottom: 1px solid rgba(0, 0, 0, .07);
